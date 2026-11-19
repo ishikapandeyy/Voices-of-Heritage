@@ -89,7 +89,7 @@ const handleSubmit = async (e) => {
 
     // Save story in MongoDB through the backend
     const response = await fetch(
-      'http://localhost:5000/api/stories',
+      '`${import.meta.env.VITE_API_URL}/api/stories`,',
       {
         method: 'POST',
         headers: {

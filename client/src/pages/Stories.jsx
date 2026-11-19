@@ -6,7 +6,7 @@ function Stories() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/stories')
+    fetch(`${import.meta.env.VITE_API_URL}/api/stories`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to load stories');
