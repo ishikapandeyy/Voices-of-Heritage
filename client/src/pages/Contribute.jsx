@@ -88,24 +88,24 @@ const handleSubmit = async (e) => {
     }
 
     // Save story in MongoDB through the backend
-    const response = await fetch(
-      '`${import.meta.env.VITE_API_URL}/api/stories`,',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name,
-          title: storyTitle,
-          storyText,
-          location,
-          language,
-          videoUrl: uploadedVideoUrl,
-          imageUrl: uploadedImageUrl,
-        }),
-      }
-    );
+  const response = await fetch(
+  `${import.meta.env.VITE_API_URL}/api/stories`,
+  {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name,
+      title: storyTitle,
+      storyText,
+      location,
+      language,
+      videoUrl: uploadedVideoUrl,
+      imageUrl: uploadedImageUrl,
+    }),
+  }
+);
 
     const data = await response.json();
 
